@@ -5,21 +5,14 @@
     <title></title>
 </head>
 <body>
-<ul id="demo">
-    <li v-repeat="items" class="item-{{$index}}">
-        {{$index}} - {{parentMsg}} {{childMsg}}
-    </li>
-</ul>
+<div id="demo">
+    <a v-on="click: onClick">Trigger a handler</a>
+    <a v-on="click: n++">Trigger an expression</a>
+</div>
 
-<ul id="tags">
-    <li v-repeat="tags">
-        {{$value}}
-    </li>
-</ul>
-
-<ul id="users">
-    <li v-repeat="user in users">
-        {{user.name}} - {{user.email}}
+<ul id="list">
+    <li v-repeat="item in items" v-on="click: toggle(item)">
+        {{item.text}}
     </li>
 </ul>
 <script src="vue.js"></script>

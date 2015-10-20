@@ -1,30 +1,27 @@
-/**
- * Created by hongboing on 10/20/15.
- */
-var demo = new Vue({
+new Vue({
     el: '#demo',
     data: {
-        parentMsg: 'Hello',
+        n: 0
+    },
+    methods: {
+        onClick: function (e) {
+            console.log(e.target.tagName) // "A"
+            console.log(e.targetVM === this) // true
+        }
+    }
+});
+
+new Vue({
+    el: '#list',
+    data: {
         items: [
-            { childMsg: 'Foo' },
-            { childMsg: 'Bar' }
+            { text: 'one', done: true },
+            { text: 'two', done: false }
         ]
-    }
-});
-
-new Vue({
-    el: '#tags',
-    data: {
-        tags: ['JavaScript', 'MVVM', 'Vue.js']
-    }
-});
-
-new Vue({
-    el: '#users',
-    data: {
-        users: [
-            { name: 'Foo Bar', email: 'foo@bar.com' },
-            { name: 'John Doh', email: 'john@doh.com' }
-        ]
+    },
+    methods: {
+        toggle: function (item) {
+            item.done = !item.done
+        }
     }
 });
