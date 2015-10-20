@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="demo">
+    <li v-repeat="items" class="item-{{$index}}">
+        {{$index}} - {{parentMsg}} {{childMsg}}
+    </li>
+</ul>
+
+<ul id="tags">
+    <li v-repeat="tags">
+        {{$value}}
+    </li>
+</ul>
+
+<ul id="users">
+    <li v-repeat="user in users">
+        {{user.name}} - {{user.email}}
+    </li>
+</ul>
+<script src="vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
